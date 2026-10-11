@@ -10,7 +10,7 @@
   - Database Engine: SQL.js (SQLite compiled to WebAssembly `sql-wasm.js` / `sql-wasm.wasm`).
   - Data Export: SheetJS (`xlsx.full.min.js`) for Excel (.xlsx), custom CSV/JSON/SQL dump generation.
   - UI Icons: Pure SVG icons (strictly adhering to the Global UI Icon Rule).
-- **Repository / Deployment**: Local static server (`serve` on port 3000), client-side only (zero data transmitted to external servers).
+- **Repository / Deployment**: `https://github.com/RealAtulSah/db.git` (branch `main`). Local static server (`serve` on port 3000), client-side only (zero data transmitted to external servers).
 
 ---
 
