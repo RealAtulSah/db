@@ -1,6 +1,7 @@
 # Sensitive database files and dumps
 *.dump
 *.backup
+*.sql
 
 # SQLite binaries generated locally
 *.db

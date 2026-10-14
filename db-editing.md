@@ -1,10 +1,10 @@
-# Persistent Coding Agent Memory - editing.md
+# Persistent Coding Agent Memory - db-editing.md
 
 ## 4. Project Identity
 - **Project**: DB File Explorer
 - **Purpose**: A complete, modern, responsive in-browser database management web application that allows users to upload, inspect, query, search, filter, edit, and export database files (primarily SQLite `.db`, `.sqlite`, `.sqlite3`, `.db3`, etc., and SQL script dump `.sql` files) directly via browser without installing software or requiring a backend server.
 - **Primary Users**: Developers, data analysts, students, and users needing quick, secure, local inspection and editing of database files.
-- **Current Version / Stage**: v1.1.0 (SQL Script Support, Attribution & Typography Polish)
+- **Current Version / Stage**: v1.1.1 (Detailed README Documentation & Memory File Compliance)
 - **Technology Stack**:
   - Frontend: HTML5, Vanilla CSS3 (Custom design system with dark/light themes, responsive layout, glassmorphism accents, curated typography), Vanilla JavaScript (ES6+ modular architecture).
   - Database Engine: SQL.js (SQLite compiled to WebAssembly `sql-wasm.js` / `sql-wasm.wasm`).
@@ -15,8 +15,9 @@
 ---
 
 ## 5. Current Project State
-- **Current Status**: All primary features fully functional and verified. Dev server running on `http://localhost:3000`.
+- **Current Status**: All primary features fully functional and verified. Dev server running on `http://localhost:3000`. Detailed documentation in README.md.
 - **Completed Features**:
+  - Comprehensive README.md created covering architecture, features, supported formats, usage guide, keyboard shortcuts, security, and local setup.
   - Local SQLite WASM engine integration with binary file reader.
   - Direct `.sql` script/dump file parsing and execution into in-memory SQLite database (with automatic dialect cleaning for MySQL/Postgres dump boilerplate).
   - File format signature detection (SQLite 3 header validation, SQL script recognition, format metadata).
@@ -38,40 +39,33 @@
   - Pure Vanilla JS, HTML, CSS; no modern frontend framework (React/Vue) or Tailwind CSS.
   - Local in-browser execution only; SQLite WASM runs in memory.
   - Strict SVG icon rule: No representative emojis in UI elements.
-  - No em dashes in UI or source comments.
+  - No em dashes or en dashes in UI, documentation, or source comments.
 
 ---
 
 ## 6. Current Session
 - **Status**: Completed
-- **Started**: 2026-10-11
-- **Current task**: MySQL dump SQL script parser fixes, em dash elimination, and footer attribution.
-- **Last meaningful milestone**: Complete compatibility with production MySQL dump `u586727527_hyphenet.sql`, loading 12 tables and over 8,000 records.
+- **Started**: 2026-10-14
+- **Current task**: Create detailed README.md documentation and ensure memory file compliance.
+- **Last meaningful milestone**: Created comprehensive README.md and migrated memory file to db-editing.md.
 - **Current Objective**: Complete.
 - **Completed In This Session**:
-  - Scanned and eliminated all em dashes and en dashes across the entire repository.
-  - Extended `detector.js` to recognize `.sql` files as supported SQL Script format.
-  - Implemented SQL script parsing and in-memory execution in `database.js` (`executeSqlScript`, `splitSqlStatements`, `cleanCreateTable`, `replaceEscapedQuotes`).
-  - Added full compatibility with MySQL/MariaDB/phpMyAdmin dumps:
-    - Escaped quotes handling (`\'` converted to `''`).
-    - Stripped unsupported table options (`ENGINE=InnoDB`, `DEFAULT CHARSET`, `COLLATE`).
-    - Handled `DEFAULT current_timestamp()` function parenthesis incompatibility.
-    - Converted MySQL `ENUM(...)` and `SET(...)` column types to `TEXT` (fixed `no such table: users` error).
-    - Stripped MariaDB `CHECK (json_valid(...))` and inline character sets.
-    - Converted `ALTER TABLE ... ADD (UNIQUE) KEY` to `CREATE (UNIQUE) INDEX IF NOT EXISTS`.
-  - Updated `app.js` dropzone and file input to accept and guide `.sql` files.
-  - Added footer attribution in `app.js` (statusbar & welcome screen): `Developed by Atul Sah` linking to `https://atulsah.in`.
-  - Verified against production dump `u586727527_hyphenet.sql` (12 tables, 8,000+ records) with 0 errors.
+  - Migrated memory file from `editing.md` to `db-editing.md` per project memory naming guidelines.
+  - Created detailed, comprehensive `README.md` containing features, supported file types, architecture map, module breakdown, local server instructions, step-by-step usage guide, keyboard shortcuts reference, security and privacy specs, author attribution, and third-party licenses.
+  - Validated that `README.md` contains zero em dashes, zero en dashes, and zero emoji icons.
+- **Still Outstanding In This Session**: None.
 
 ---
 
 ## 7. Active Tasks
+- [x] Create detailed README.md documentation
+- [x] Rename memory file to db-editing.md per rules
 - [x] Remove all em dashes across the codebase
 - [x] Implement .sql script reading support
 - [x] Fix MySQL/phpMyAdmin SQL dump parser for `u586727527_hyphenet.sql`
 - [x] Add footer "Developed by Atul Sah (https://atulsah.in)"
 - [x] Verify in browser and check console errors
-- [x] Update editing.md
+- [x] Update db-editing.md
 
 ---
 
@@ -102,6 +96,34 @@
 ---
 
 ## 17. Development History
+
+### 2026-10-14 - Detailed README Documentation and Memory File Migration
+- **User Request**:
+  1. create a detailed readme.md
+- **Work Completed**:
+  - Migrated memory file from `editing.md` to `db-editing.md` to strictly follow the `[projectName]-editing.md` naming convention.
+  - Authored a comprehensive, technical `README.md` covering:
+    - In-browser SQLite WebAssembly engine overview (SQL.js).
+    - Detailed feature breakdown: format detection, schema inspection, pagination, multi-column search & filtering, interactive SQL console, CRUD record modal editor, export suite (CSV, JSON, styled Excel .xlsx, and .db binary download).
+    - MySQL/MariaDB/phpMyAdmin dump auto-normalization details.
+    - Supported file formats matrix (SQLite 3, SQL scripts, Access, Berkeley DB, H2).
+    - Architecture breakdown and directory structure.
+    - Local server getting started instructions for Node, Python, PHP, and VS Code.
+    - Step-by-step usage guide.
+    - Keyboard shortcuts reference table.
+    - 100% offline client-side security & privacy guarantees and formula injection defense.
+    - Author attribution to Atul Sah (https://atulsah.in) and open-source licenses.
+  - Verified zero em dashes, zero en dashes, and zero emoji icons across all added documentation.
+- **Files Created**:
+  - `README.md`
+- **Files Modified**:
+  - `db-editing.md` (renamed from `editing.md`)
+- **Verification Status**:
+  - Implementation: Verified
+  - Testing: Passed (0 em dashes, 0 en dashes, 0 emojis, automated checks passed)
+  - Documentation: Updated
+
+---
 
 ### 2026-10-11 - Em Dash Removal, .SQL File Support, and Footer Attribution
 - **User Request**:
@@ -146,11 +168,38 @@
 
 ## 30. Git Push Security Gate Audit Record
 
-- **Audit Date**: 2026-10-11
+### Audit Date: 2026-10-14
 - **Target Repository**: `https://github.com/RealAtulSah/db.git`
 - **Target Branch**: `main`
 
-### Mandatory Pre-Push Review Checklist
+#### Mandatory Pre-Push Review Checklist
+1. **Diff & Staged Files Review**:
+   - Status: Verified.
+   - Files to commit: `README.md`, `db-editing.md` (renamed from `editing.md`), `.gitignore`.
+   - Verified `.gitignore` protects SQLite binaries, SQL dumps (`*.sql`), `.env`, and secret keys.
+   - Zero scratch scripts or debug artifacts in git tree.
+2. **Secret & Credential Scan**:
+   - Status: Verified.
+   - Comprehensive regex scan for API keys, tokens, credentials, private keys returned 0 findings.
+3. **Source Code Integrity Check**:
+   - Status: Verified.
+   - Documentation and configuration only. Zero obfuscated scripts or untrusted code.
+4. **Dependency & Build Check**:
+   - Status: Verified.
+   - Zero new dependencies added. Existing dependencies vendored locally in `lib/`.
+5. **Functional & Security Regression Verification**:
+   - Status: Verified.
+   - All documentation and files verified with zero em dashes, zero en dashes, and zero emoji icons.
+6. **Pre-Push Gate Decision**:
+   - **Decision: Approved**
+
+---
+
+### Audit Date: 2026-10-11
+- **Target Repository**: `https://github.com/RealAtulSah/db.git`
+- **Target Branch**: `main`
+
+#### Mandatory Pre-Push Review Checklist
 1. **Diff & Staged Files Review**:
    - Status: Verified.
    - Files to commit: `index.html`, `css/style.css`, `js/*.js`, `lib/sql-wasm.js`, `lib/sql-wasm.wasm`, `lib/xlsx.full.min.js`, `.gitignore`, `editing.md`.
